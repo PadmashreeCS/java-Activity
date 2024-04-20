@@ -1,0 +1,54 @@
+/*Declare a class named Customer with attributes name, email, and phoneNumber. Implement a method displayInfo() to
+print out the details of the customer.
+b. Instantiate an object of the Customer class and demonstrate how to access and modify its attributes.*/
+package upload;
+import java.util.Scanner;
+public class customer 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int n;
+		{
+			System.out.println("Enter the number of customer details");
+			n=sc.nextInt();
+			Customer1 arr[] = new Customer1[n]; 
+			for(int i=0;i<n;i++)
+			{
+				arr[i]=new Customer1();
+			}
+			System.out.println("NAME\t\tPHONE_NO.\t\tEMAIL\t\t");
+			for(int i=0;i<n;i++)
+			{
+				arr[i].displayinfo();
+			}
+		}
+	}
+}
+class Customer1
+{
+	Scanner sc = new Scanner(System.in);
+	String email;
+	String name;
+	long phoneno;
+	Customer1()
+	{
+		try
+		{
+			System.out.println("Enter the Name: ");
+			name=sc.next();
+			System.out.println("Enter the Email: ");
+			email=sc.next();
+			System.out.println("Enter the Phoneno: ");
+			phoneno=sc.nextLong();
+		}
+		catch(Exception e)
+		{
+			System.out.println("Runtime Error occured while reading input");e.printStackTrace();
+		}
+	}
+	public void displayinfo()
+	{
+		System.out.println(name+"\t"+phoneno+"\t"+email);
+	}
+}
