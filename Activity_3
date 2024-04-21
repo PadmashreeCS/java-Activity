@@ -1,0 +1,39 @@
+/*Design a TemperatureConverter class with methods to convert Celsius to Fahrenheit and vice versa. Instantiate
+objects of class by using default constructor Use an instance of the TemperatureConverter class to perform
+temperature conversions and display the results.*/
+package upload;
+import java.util.Scanner;
+public class TemperatureConverter 
+{
+	public static void main(String args[])
+	{
+		System.out.println("\t\t\t\t\t\tTemperature Conversion Calculator\t");
+		temperatureconver temp = new temperatureconver();
+		temp.getFahrenheit();
+		temp.getCelsius();
+	}
+}
+class temperatureconver
+{
+	Scanner sc =new Scanner(System.in);
+	int c;
+	int f;
+	double result;
+	temperatureconver()
+	{
+		System.out.println("Enter the Celsius for convert to Fahrenheit");
+		c=sc.nextInt();
+		System.out.println("Enter the Fahrenheit for convert to Celsius");
+		f=sc.nextInt();
+	}
+	public void getFahrenheit()
+	{
+		result=(c*1.8)+32;
+		System.out.println("The convertion of Celsius "+c+" to Fahrenheit is "+result+"F");
+	}
+	public void getCelsius()
+	{
+		result=(f-32)/1.8;
+		System.out.println("The convertion of Fahrenheit "+c+" to Celsius is "+result+"C");
+	}
+}
